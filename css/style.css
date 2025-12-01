@@ -1,62 +1,145 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: #dedede;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #fafafa;
 }
 
-h1 {
+/* ===== HEADER ===== */
+header {
     text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
+    padding: 20px;
+    background: #4a90e2;
+    color: white;
 }
 
-a {
-    color: #000;
+.tagline {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* ===== NAV ===== */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: #333;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
     text-decoration: none;
-    font-family:Arial, sans-serif;
 }
 
-p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+nav ul li a:hover {
+    background: #555;
 }
 
-img{
-  width:100%;
+/* ===== HERO IMAGE ===== */
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== COLUMNS ===== */
+.columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.columns div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+}
+
+.columns img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
 }
 
 
-p{
-  text-align:center;
-}
+/* =========================================================
+   MEDIA QUERIES
+   ========================================================= */
 
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
-}
-
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
-}
-
-/* ---------- MEDIA QUERY 1: điện thoại nhỏ ---------- */
+/* 1) MOBILE (≤ 600px) */
 @media screen and (max-width: 600px) {
-  
-    /* Chỉnh kích thước div */
-    .container, section, article {
-      width: 100%;
-      padding: 10px;
+
+    nav ul {
+        flex-direction: column;
     }
-  
-    /* Hình ảnh co theo chiều rộng */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+
+    .columns {
+        flex-direction: column;
     }
-  }
-  
+
+    .columns div {
+        width: 100%;
+    }
+}
+
+/* 2) SMALL TABLET (601px – 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    .columns {
+        flex-wrap: wrap;
+    }
+
+    .columns div {
+        flex: 1 1 45%;
+    }
+}
+
+/* 3) LAPTOP (901px – 1200px) */
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+
+    .intro {
+        max-width: 1000px;
+    }
+
+    .columns div {
+        flex: 1 1 30%;
+    }
+}
+
+/* 4) LARGE DESKTOP (≥ 1201px) */
+@media screen and (min-width: 1201px) {
+
+    .intro {
+        max-width: 1200px;
+    }
+
+    .columns div {
+        flex: 1 1 25%;
+    }
+}
