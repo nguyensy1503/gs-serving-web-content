@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio Wireframe - Nguyễn Chí Sỹ</title>
+  <style>
+    /* ==============================
+       Base (mobile-first) styles
+       ============================== */
+    :root{
+      --gap:16px;
+      --max-width:1100px;
+      --line:#222;
+      --muted:#444;
+      --bg:#fff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui, -apple-system, Arial, sans-serif;
+      color:var(--line);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:var(--gap);
+      display:flex;
+      justify-content:center;
+    }
+    .site{
+      width:100%;
+      max-width:var(--max-width);
+      border:2px solid var(--line);
+      padding:var(--gap);
+      background: #fcfcfc;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* Header / nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:2px solid var(--line);
+      padding-bottom:12px;
+      margin-bottom:var(--gap);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo{
+      width:72px;height:36px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{text-decoration:none;color:var(--muted);font-weight:600}
+
+    /* Mobile menu button */
+    .menu-btn{display:inline-block;border:2px solid var(--line);padding:6px;border-radius:6px;background:transparent}
+
+    /* Hero / content placeholders (wireframe style) */
+    .hero{
+      border:2px dashed var(--line);
+      height:180px;
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:var(--gap);
+      position:relative;
+    }
+    .hero::before{content:'X';font-size:48px;color:var(--line);opacity:0.25}
+
+    h1{font-size:24px;margin:0 0 8px}
+    p.lead{margin:0 0 12px;color:var(--muted)}
+
+    .card-placeholder{border:2px dashed var(--line);height:110px;display:flex;align-items:center;justify-content:center}
+
+    /* About section */
+    .about{margin-top:var(--gap)}
+    .about .media{height:120px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center}
+
+    /* Footer */
+    footer{border-top:2px solid var(--line);padding-top:12px;margin-top:var(--gap);text-align:center;color:var(--muted)}
+
+    /* Desktop layout (>=768px) - show full nav, wider hero, two-column sections */
+    @media(min-width:768px){
+      .menu-btn{display:none}
+      nav a{color:var(--line)}
+      .hero{height:320px}
+      h1{font-size:32px}
+      .two-col{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+      .card-placeholder{height:160px}
+      .about .media{height:220px}
+    }
+
+    /* Extra: wireframe text look (no colors / fonts) */
+    .muted-line{height:12px;background:transparent;border-bottom:2px solid var(--line);width:70%;margin:12px 0}
+    .muted-line.short{width:40%}
+    .muted-line.small{height:10px;width:50%}
+
+  </style>
+</head>
+<body>
+  <div class="site" role="document">
+    <header>
+      <div class="brand">
+        <div class="logo">LOGO</div>
+        <div>
+          <div style="font-weight:700">Nguyễn Chí Sỹ</div>
+          <div style="font-size:12px;color:var(--muted)">Hà Nội — Fullstack Aspirant</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero / Landing (Home) -->
+    <main id="home">
+      <section class="hero" aria-hidden="true">
+        <!-- dashed box with X indicates image/hero placeholder -->
+      </section>
+
+      <h1>Welcome</h1>
+      <div class="muted-line"></div>
+      <p class="lead">Tôi là Nguyễn Chí Sỹ — hiện đang học lập trình web và hướng tới vị trí Fullstack Developer. Dưới đây là thiết kế wireframe cho trang chủ và trang giới thiệu (mobile + desktop).</p>
+
+      <div class="two-col" style="margin-top:var(--gap)">
+        <div>
+          <h2 style="margin-top:0">Highlights</h2>
+          <div class="muted-line"></div>
+          <p class="lead">Các phần chính: hero, tiêu đề, đoạn mô tả, hình minh họa. Trên mobile, giao diện được sắp xếp theo cột dọc; trên desktop, hero lớn hơn và nội dung giãn đều.</p>
+          <div style="height:12px"></div>
+          <div class="card-placeholder">Image</div>
+        </div>
+
+        <aside>
+          <h3 style="margin-top:0">Quick info</h3>
+          <div class="muted-line short"></div>
+          <div class="muted-line small"></div>
+          <div style="height:12px"></div>
+          <div class="card-placeholder">CTA / Card</div>
+        </aside>
+      </div>
+
+      <!-- About section -->
+      <section class="about" id="about">
+        <h2>About</h2>
+        <div class="muted-line"></div>
+        <p class="lead">Trang "About" mô tả kinh nghiệm, mục tiêu và kỹ năng. Wireframe giữ mọi thứ đơn giản, tập trung vào nội dung và vị trí thành phần.</p>
+        <div style="height:12px"></div>
+        <div class="about-grid">
+          <div class="media">Media</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 Nguyễn Chí Sỹ — Wireframe submission</div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple mobile menu toggle for demonstration
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const nav = document.querySelector('nav');
+      let open = false;
+      btn && btn.addEventListener('click', ()=>{
+        open = !open;
+        // Basic show/hide behaviour for small screens
+        if(open){
+          document.querySelectorAll('nav a').forEach((a,i)=>{ if(i>0) a.style.display='inline-block'; });
+        } else {
+          document.querySelectorAll('nav a').forEach((a,i)=>{ if(i>0) a.style.display='none'; });
+        }
+      });
+      // On load hide nav links (except the button) for mobile
+      function init(){
+        if(window.innerWidth < 768){
+          document.querySelectorAll('nav a').forEach((a,i)=>{ if(i>0) a.style.display='none'; });
+        }
+      }
+      init();
+      window.addEventListener('resize', init);
+    })();
+  </script>
+</body>
+</html>
