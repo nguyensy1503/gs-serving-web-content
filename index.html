@@ -1,82 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khám phá Điểm Du Lịch</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio - Nguyễn Chí Sỹ</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <div class="site">
 
     <header>
-        <h1>Khám phá Những Điểm Du Lịch Tuyệt Vời</h1>
-        <p class="tagline">Hành trình – Trải nghiệm – Văn hóa – Ẩm thực</p>
+      <div class="brand">
+        <div class="logo">LOGO</div>
+        <div>
+          <div class="name">Nguyễn Chí Sỹ</div>
+          <div class="sub">Hà Nội – Lập trình Web → Mục tiêu Fullstack</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Primary navigation">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">☰</button>
+        <div id="navList" class="nav-list">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </header>
 
-    <nav>
+    <main id="home">
+      <section class="hero">
+        <h1 class="hero-title">Xin chào! Tôi là Sỹ</h1>
+      </section>
+
+      <section class="intro">
+        <h2>Giới thiệu</h2>
+        <p class="lead">Tôi đang theo học lập trình Web và hướng tới trở thành lập trình viên Fullstack.</p>
+      </section>
+
+      <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="media">Ảnh / Hình minh họa</div>
+        <p class="text">
+          Tôi có nền tảng HTML, CSS, JavaScript và yêu thích tạo ra giao diện web sạch, dễ dùng.
+        </p>
+      </section>
+
+      <section id="skills" class="skills">
+        <h2>Kỹ năng</h2>
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Điểm đến</a></li>
-            <li><a href="#">Ẩm thực</a></li>
-            <li><a href="#">Kinh nghiệm</a></li>
+          <li>HTML5 / Semantic</li>
+          <li>CSS3 / Responsive</li>
+          <li>JavaScript cơ bản</li>
+          <li>Git & GitHub</li>
         </ul>
-    </nav>
+      </section>
 
-    <main>
-
-        <section class="hero">
-            <img src="images/Yellow.png" alt="Khung cảnh du lịch tuyệt đẹp">
-        </section>
-
-        <section class="intro">
-            <p>
-                Chào mừng bạn đến với trang web giới thiệu những điểm du lịch đẹp nhất. 
-                Từ bãi biển xanh ngắt, những ngọn núi hùng vĩ đến phố cổ yên bình, 
-                mỗi nơi đều mang một câu chuyện độc đáo và đáng khám phá.
-            </p>
-
-            <p>
-                Bạn sẽ được gợi ý hành trình, trải nghiệm văn hóa bản địa, 
-                ẩm thực đặc sắc và những bí quyết để tận hưởng chuyến đi trọn vẹn nhất.
-            </p>
-
-            <p>
-                Hãy khám phá ẩm thực địa phương, tham gia các hoạt động ngoài trời 
-                và hòa mình vào đời sống của người dân bản xứ—đó là cách tuyệt vời nhất để hiểu một vùng đất.
-            </p>
-
-            <p>
-                Hãy luôn tôn trọng môi trường và văn hóa bản địa trong mọi hành trình. 
-                Mỗi bước chân của bạn sẽ góp phần gìn giữ vẻ đẹp thiên nhiên.
-            </p>
-        </section>
-
-        <section class="columns">
-            <div>
-                <img src="images/Blue.png" alt="Phong cảnh biển đẹp">
-                <h3>Bãi Biển</h3>
-                <p>Thưởng thức nắng vàng và biển xanh trong lành.</p>
-            </div>
-
-            <div>
-                <img src="images/Green.png" alt="Khung cảnh núi non">
-                <h3>Núi Rừng</h3>
-                <p>Hành trình trekking thư giãn giữa thiên nhiên.</p>
-            </div>
-
-            <div>
-                <img src="images/Red...nk.jpeg" alt="Thành phố cổ">
-                <h3>Phố Cổ</h3>
-                <p>Lạc vào những con đường bình yên đầy lịch sử.</p>
-            </div>
-        </section>
-
+      <section id="contact" class="contact">
+        <h2>Liên hệ</h2>
+        <form id="contactForm" novalidate>
+          <label>Email:
+            <input type="email" name="email" required>
+          </label>
+          <label>Tin nhắn:
+            <textarea name="msg" required></textarea>
+          </label>
+          <button type="submit">Gửi</button>
+        </form>
+      </section>
     </main>
 
     <footer>
-        <p>© 2025 Travel Explorer — Khám phá thế giới theo cách của bạn</p>
+      © 2025 Nguyễn Chí Sỹ – Portfolio
     </footer>
+  </div>
 
+  <script src="menu-toggle.js"></script>
 </body>
 </html>

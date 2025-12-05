@@ -1,145 +1,152 @@
-/* ===== RESET ===== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #555;
+  --line: #000;
+  --gap: 18px;
+  --max-width: 1100px;
 }
+
+* { box-sizing: border-box; }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #fafafa;
+  margin: 0;
+  padding: var(--gap);
+  display: flex;
+  justify-content: center;
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  color: var(--text);
 }
 
-/* ===== HEADER ===== */
+/* container site */
+.site {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--gap);
+  border: 2px solid var(--line);
+  background: #fdfdfd;
+}
+
+/* header */
 header {
-    text-align: center;
-    padding: 20px;
-    background: #4a90e2;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: var(--gap);
+  margin-bottom: var(--gap);
 }
 
-.tagline {
-    font-size: 18px;
-    margin-top: 5px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* ===== NAV ===== */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background: #333;
+.logo {
+  width: 60px;
+  height: 40px;
+  border: 2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: bold;
 }
 
-nav ul li a {
-    display: block;
-    padding: 12px 20px;
-    color: white;
-    text-decoration: none;
+.name { font-size: 18px; font-weight: 700; }
+.sub { font-size: 12px; color: var(--muted); }
+
+/* Nav */
+.menu-btn {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 2px solid var(--line);
+  background: #fff;
+  border-radius: 6px;
+  font-size: 18px;
 }
 
-nav ul li a:hover {
-    background: #555;
+.nav-list {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* ===== HERO IMAGE ===== */
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
+.nav-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
 }
 
-/* ===== INTRO SECTION ===== */
-.intro {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
+/* Hero */
+.hero {
+  height: 220px;
+  border: 2px dashed var(--line);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom: var(--gap);
 }
 
-/* ===== COLUMNS ===== */
-.columns {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;
+.hero-title { font-size: 26px; }
+
+/* Sections */
+h2 { margin-top: 0; }
+
+.media {
+  height: 150px;
+  border: 2px dashed var(--line);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom: 12px;
 }
 
-.columns div {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    flex: 1;
+/* Form */
+form {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.columns img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+input, textarea {
+  width:100%;
+  padding:10px;
+  border:1px solid #aaa;
+  border-radius:4px;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #333;
-    color: white;
+button {
+  padding:10px 16px;
+  border:none;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  border-radius:4px;
 }
 
+/* Desktop ≥ 768px */
+@media (min-width: 768px) {
+  nav {
+    display:flex;
+    gap:20px;
+    align-items:center;
+  }
 
-/* =========================================================
-   MEDIA QUERIES
-   ========================================================= */
+  .menu-btn { display:none; }
 
-/* 1) MOBILE (≤ 600px) */
-@media screen and (max-width: 600px) {
+  .nav-list {
+    display:flex !important;
+    flex-direction:row;
+    margin:0;
+  }
 
-    nav ul {
-        flex-direction: column;
-    }
+  .hero { height:320px; }
+  .hero-title { font-size: 34px; }
 
-    .columns {
-        flex-direction: column;
-    }
-
-    .columns div {
-        width: 100%;
-    }
-}
-
-/* 2) SMALL TABLET (601px – 900px) */
-@media screen and (min-width: 601px) and (max-width: 900px) {
-
-    .columns {
-        flex-wrap: wrap;
-    }
-
-    .columns div {
-        flex: 1 1 45%;
-    }
-}
-
-/* 3) LAPTOP (901px – 1200px) */
-@media screen and (min-width: 901px) and (max-width: 1200px) {
-
-    .intro {
-        max-width: 1000px;
-    }
-
-    .columns div {
-        flex: 1 1 30%;
-    }
-}
-
-/* 4) LARGE DESKTOP (≥ 1201px) */
-@media screen and (min-width: 1201px) {
-
-    .intro {
-        max-width: 1200px;
-    }
-
-    .columns div {
-        flex: 1 1 25%;
-    }
+  .about { display:flex; gap:20px; align-items:center; }
+  .about .media { width:40%; height:200px; }
+  .about .text { flex:1; }
 }
